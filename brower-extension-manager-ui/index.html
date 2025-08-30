@@ -12,27 +12,26 @@
       href="./assets/images/favicon-32x32.png" />
 
     <title>Frontend Mentor | Browser extensions manager UI</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <header class="toggle-bar">
+      <img src="./assets/images/logo.svg" alt="logo" />
+      <img src="./assets/images/icon-sun.svg" alt="sun" />
+    </header>
+
     <section class="filter__menu">
       <h2>Extensions List</h2>
 
       <ul class="filter__list">
-        <li class="filter__list__item active">All</li>
-        <li class="filter__list__item">Active</li>
-        <li class="filter__list__item">Inactive</li>
+        <li data-value="all" class="filter__list__item active">All</li>
+        <li data-value="active" class="filter__list__item">Active</li>
+        <li data-value="inactive" class="filter__list__item">Inactive</li>
       </ul>
     </section>
 

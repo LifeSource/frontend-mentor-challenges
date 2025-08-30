@@ -1,7 +1,15 @@
+@font-face {
+  font-family: "nano-sans";
+  src: url("./assets/fonts/static/NotoSans-Medium.ttf") format("ttf");
+  font-weight: medium;
+}
+
 :root {
   color-scheme: light dark;
 
   --button-active-color: hsl(3, 86%, 64%);
+  --light-bg-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --dark-bg-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
 }
 
 *,
@@ -11,8 +19,28 @@
   padding: 0;
 }
 
+html {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+body {
+  background: var(--dark-bg-gradient);
+  height: 100dvh;
+  padding: 1rem;
+}
+
 ul {
   list-style: none;
+}
+
+.toggle-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: hsl(226, 11%, 37%);
 }
 
 .filter__menu {
@@ -29,7 +57,7 @@ ul {
 .filter__list__item {
   padding: 0.25rem 1rem;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: medium;
 
   &:hover,
   &.active {
@@ -54,17 +82,71 @@ ul {
 
   header {
     display: flex;
+    align-items: flex-start;
   }
 
   footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .round {
+    border-radius: 50%;
+  }
+
+  .switch {
+    position: relative;
+    display: flex;
+    min-height: 25px;
+    border: 1px solid grey;
+    min-width: 50px;
+    border-radius: 2rem;
+    cursor: pointer;
+
+    &:hover {
+      outline: 2px solid var(--button-active-color);
+      outline-offset: 2px;
+    }
+
+    .slider {
+      background: white;
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      transition: all 1.5s ease;
+
+      position: absolute;
+      left: 5px;
+      top: 3px;
+    }
+
+    input[type="radio"] {
+      opacity: 0;
+    }
+  }
+
+  .switch.active {
+    background: var(--button-active-color);
+
+    .slider {
+      left: unset;
+      right: 5px;
+    }
   }
 
   button {
-    padding: 0.5rem 1rem;
     appearance: none;
     background: none;
+    padding: 0.5rem 1rem;
     border: 1px solid #ccc;
     border-radius: 2rem;
+    cursor: pointer;
+
+    &:hover {
+      outline: 2px solid var(--button-active-color);
+      outline-offset: 2px;
+    }
   }
 
   .icon {
@@ -74,6 +156,26 @@ ul {
 
 .plugins__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1;
   gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .plugins__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .element {
+    color: black;
+    background-color: white;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .element {
+    color: white;
+    background-color: black;
+  }
 }

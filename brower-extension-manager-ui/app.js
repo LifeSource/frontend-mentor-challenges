@@ -79,6 +79,9 @@ const pluginsList = [
   },
 ];
 
+const pluginGrid = document.querySelector(".plugins__grid");
+let list = pluginsList;
+
 function createHeaderSection(logo, name, description) {
   const header = document.createElement("header");
   const icon = document.createElement("img");
@@ -103,45 +106,117 @@ function createHeaderSection(logo, name, description) {
   return header;
 }
 
-function createFooterSection() {
+const filterListItems = document.querySelectorAll(".filter__list__item");
+
+if (filterListItems) {
+  filterListItems.forEach((item) => {
+    item.addEventListener("click", filterList);
+  });
+}
+
+function filterByState(state) {
+  if (typeof state !== "string") return;
+
+  switch (state) {
+    case "all":
+      list = pluginsList;
+      createGrid();
+      break;
+    case "active":
+      list = pluginsList.filter((item) => item.isActive === true);
+      createGrid();
+      break;
+    case "inactive":
+      list = pluginsList.filter((item) => item.isActive === false);
+      createGrid();
+      break;
+    default:
+      list = pluginsList;
+      createGrid();
+      break;
+  }
+}
+
+function filterList(event) {
+  event.preventDefault();
+
+  // remove the active toggle
+  filterListItems.forEach((item) => {
+    item.classList.remove("active");
+  });
+
+  const target = event.currentTarget;
+  const value = target.getAttribute("data-value");
+
+  filterByState(value);
+
+  target.classList.add("active");
+  console.log({ target, value });
+}
+
+function toggleActive(event) {
+  event.preventDefault();
+  const target = event.currentTarget;
+  target.classList.toggle("active");
+}
+
+function removePlugin(event) {
+  event.preventDefault();
+  const element = event.currentTarget;
+  const grandparent = element.parentElement.parentElement;
+  pluginGrid.removeChild(grandparent);
+}
+
+function createFooterSection(isActive, index) {
   const footer = document.createElement("footer");
   const removeButton = document.createElement("button");
-  removeButton.textContent = "remove";
-  footer.appendChild(removeButton);
+  removeButton.textContent = "Remove";
+
+  removeButton.addEventListener("click", removePlugin);
 
   const switchContainer = document.createElement("label");
-  switchContainer.className = "switch";
+  switchContainer.className = isActive ? "switch active" : "switch";
+
+  switchContainer.addEventListener("click", toggleActive);
+
   const checkbox = document.createElement("input");
+  checkbox.id = `toggle-${index}`;
   checkbox.type = "radio";
   const slider = document.createElement("span");
-  slider.className = "slider round";
+  slider.className = `slider round`;
+
   switchContainer.appendChild(checkbox);
   switchContainer.appendChild(slider);
+
+  footer.appendChild(removeButton);
+  footer.append(switchContainer);
   return footer;
 }
 
-function createPluginTile(item) {
+function createPluginTile(item, index) {
   const { logo, name, description, isActive } = item;
   const element = document.createElement("div");
   element.className = "tile";
 
   const header = createHeaderSection(logo, name, description);
-  const footer = createFooterSection();
+  const footer = createFooterSection(isActive, index);
   // This is all the element the parent needs to add to it's body
   element.appendChild(header);
   element.appendChild(footer);
 
-  console.log("ELEMENT ", element);
   return element;
 }
 
-const pluginGrid = document.querySelector(".plugins__grid");
+const createGrid = () => {
+  pluginGrid.replaceChildren();
 
-if (pluginGrid) {
   let pluginElement;
-
-  pluginsList.forEach((item) => {
-    pluginElement = createPluginTile(item);
+  list.forEach((item, index) => {
+    pluginElement = createPluginTile(item, index);
     pluginGrid.appendChild(pluginElement);
   });
+};
+
+if (pluginGrid) {
+  createGrid();
 }
