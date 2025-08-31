@@ -2,7 +2,7 @@
   --bg-color: hsl(30, 54%, 90%);
   --clr-brown-800: hsl(14, 45%, 36%);
   --clr-rose-800: hsl(332, 51%, 32%);
-  --clr-rose-50: hsl(330, 100%, 98%)
+  --clr-rose-50: hsl(330, 100%, 98%);
 }
 
 *,
@@ -29,8 +29,6 @@ img {
 
 section {
   background: white;
-  padding: 0 1rem;
-
 }
 
 h1 {
@@ -44,6 +42,10 @@ h2 {
 h2,
 ::marker {
   color: hsl(14, 45%, 36%);
+}
+
+::marker {
+  font-weight: bold;
 }
 
 ul,
@@ -77,10 +79,23 @@ table {
   max-width: 1440px;
   margin-inline: auto;
   background-color: white;
+  border-radius: 12px;
+  padding: 1rem;
+
+  img {
+    border-radius: 0.85rem;
+  }
+
+  @media (min-width: 768px) {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .preparation {
-  padding: 0.5rem 1rem;
+  padding: 0.15rem 1rem;
   border-radius: 8px;
   background: var(--clr-rose-50);
 
@@ -91,5 +106,5 @@ table {
 
 .ingredients,
 .instructions {
-    border-bottom: 1px solid hsl(0, 0%, 80%);
+  border-bottom: 1px solid hsl(0, 0%, 80%);
 }
