@@ -1,0 +1,95 @@
+:root {
+  --bg-color: hsl(30, 54%, 90%);
+  --clr-brown-800: hsl(14, 45%, 36%);
+  --clr-rose-800: hsl(332, 51%, 32%);
+  --clr-rose-50: hsl(330, 100%, 98%)
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-color);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+section {
+  background: white;
+  padding: 0 1rem;
+
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h2,
+::marker {
+  color: hsl(14, 45%, 36%);
+}
+
+ul,
+ol {
+  padding-left: 1rem;
+}
+
+li {
+  padding-bottom: 0.75rem;
+  padding-left: 0.75rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  td {
+    padding: 0.85rem 0;
+    &:nth-child(2) {
+      color: var(--clr-brown-800);
+      font-weight: bold;
+    }
+  }
+
+  tr {
+    border-bottom: 1px solid hsl(0, 0%, 80%);
+  }
+}
+
+.container {
+  max-width: 1440px;
+  margin-inline: auto;
+  background-color: white;
+}
+
+.preparation {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: var(--clr-rose-50);
+
+  h3 {
+    color: var(--clr-rose-800);
+  }
+}
+
+.ingredients,
+.instructions {
+    border-bottom: 1px solid hsl(0, 0%, 80%);
+}
