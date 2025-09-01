@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Social Media Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <section>
+          <h2>Social Media Dashboard Total</h2>
+          <div>Followers: 23,004</div>
+        </section>
+        <section>Dark Mode</section>
+      </header>
+
+      <div class="grid">
+        <div class="tile tile--fb">
+          <section class="handle">
+            <img src="./images/icon-facebook.svg" alt="Facebook logo" />
+            @nathanf
+          </section>
+          <div class="follower">
+            <div class="counter">1987</div>
+            <div class="upper">Followers</div>
+          </div>
+          <span class="growth">12 Today </span>
+        </div>
+
+        <div class="tile tile--twitter">
+          <div class="handle">
+            <img src="./images/icon-twitter.svg" alt="Twitter logo" />
+            @nathanf
+          </div>
+          <div class="follower">
+            <div class="counter">1044</div>
+            <div class="upper">Followers</div>
+          </div>
+          <div class="growth">99 Today</div>
+        </div>
+
+        <div class="tile tile--ig">
+          <div class="handle">
+            <img src="./images/icon-instagram.svg" alt="instagram" />
+            @realnathanf
+          </div>
+          <div class="follower">
+            <div class="counter">11k</div>
+            <div class="upper">Followers</div>
+          </div>
+          <div class="growth">1099 Today</div>
+        </div>
+
+        <div class="tile tile--yt">
+          <div class="handle">
+            <img src="./images/icon-youtube.svg" alt="Youtube logo" />
+            Nathan F.
+          </div>
+          <div class="follower">
+            <div class="counter">8239</div>
+            <div class="upper">Subscribers</div>
+          </div>
+          <div class="decline">144 Today</div>
+        </div>
+      </div>
+
+      <h3>Overview - Today</h3>
+
+      <div class="grid overview">
+        <div class="tile page-views">
+          <div class="space-between">
+            <span> Page Views </span>
+            <img src="./images/icon-facebook.svg" alt="Facebook icon" />
+          </div>
+          <div class="space-between">
+            <span class="counter">87</span>
+            <div class="growth">3%</div>
+          </div>
+        </div>
+
+        <div class="tile likes--fb">
+          <div class="space-between">
+            <span> Likes </span>
+            <img src="./images/icon-facebook.svg" alt="Facebook icon" />
+          </div>
+
+          <div class="space-between">
+            <div class="counter">52</div>
+            <div class="growth">2%</div>
+          </div>
+        </div>
+
+        <div class="tile likes--ig">
+          <div class="space-between">
+            <span>Likes</span>
+            <img src="./images/icon-instagram.svg" alt="Instagram icon" />
+          </div>
+          <div class="space-between">
+            <div class="counter">5462</div>
+            <div class="growth">2257%</div>
+          </div>
+        </div>
+
+        <div class="tile profile-views">
+          <div class="space-between">
+            <span>Profile Views</span>
+            <img src="./images/icon-instagram.svg" alt="Instagram icon" />
+          </div>
+          <div class="space-between">
+            <div class="counter">52k</div>
+            <div class="growth">1375%</div>
+          </div>
+        </div>
+
+        <div class="tile retweets">
+          <div class="space-between">
+            <span>Retweets</span>
+            <img src="./images/icon-twitter.svg" alt="Twitter icon" />
+          </div>
+          <div class="space-between">
+            <div class="counter">117</div>
+            <div class="growth">303%</div>
+          </div>
+        </div>
+
+        <div class="tile likes--twitter">
+          <div class="space-between">
+            <span>Likes</span>
+            <img src="./images/icon-twitter.svg" alt="Twitter icon" />
+          </div>
+          <div class="space-between">
+            <div class="counter">507</div>
+            <div class="growth">553%</div>
+          </div>
+        </div>
+        <div class="tile likes--yt">
+          <div class="space-between">
+            <span>Likes</span>
+            <img src="./images/icon-youtube.svg" alt="Youtube icon" />
+          </div>
+          <div class="space-between">
+            <div class="counter">107</div>
+            <div class="decline">19%</div>
+          </div>
+        </div>
+          
+
+        <div class="tile total-views">
+          <div class="space-between">
+            <span>Total Views</span>
+            <img src="./images/icon-youtube.svg" alt="Youtube icon" />  
+          </div>
+          <div class="space-between">
+            <div class="counter">1407</div>  
+            <div class="decline">12%</div>
+          </div>
+      </div>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Ken</a>.
+      </div>
+    </div>
+  </body>
+</html>
