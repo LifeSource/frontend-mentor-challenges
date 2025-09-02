@@ -19,16 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+  
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -38,7 +29,13 @@
           <h2>Social Media Dashboard Total</h2>
           <div>Followers: 23,004</div>
         </section>
-        <section>Dark Mode</section>
+        <section class="toggle-wrapper">
+          <span>Dark Mode</span>
+          <label class="switch">
+            <input type="checkbox" id="toggle" />
+            <span class="slider round"></span>
+          </label>
+        </section>
       </header>
 
       <div class="grid">
@@ -170,8 +167,6 @@
             <div class="decline">19%</div>
           </div>
         </div>
-          
-
         <div class="tile total-views">
           <div class="space-between">
             <span>Total Views</span>
@@ -183,12 +178,8 @@
           </div>
       </div>
 
-      <div class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Ken</a>.
-      </div>
     </div>
+
+    <script src="app.js"></script>
   </body>
 </html>
